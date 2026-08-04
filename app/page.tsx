@@ -1,120 +1,59 @@
 import Link from 'next/link';
 import Nav from './components/Nav';
 
-const steps = [
-  ['01', 'Enquire', 'A thoughtful project intake captures useful context before the first reply.'],
-  ['02', 'Qualify', 'Every serious opportunity has a clear owner, signal, and next step.'],
-  ['03', 'Discover', 'Project details become a focused agenda rather than a scattered conversation.'],
-  ['04', 'Propose', 'A structured brief gives your proposal a stronger starting point.'],
-  ['05', 'Onboard', 'Clients receive one elegant home for the inputs that matter.'],
-  ['06', 'Begin', 'The project starts with context, assets, and next actions already in place.'],
-];
-
-const deliverables = [
-  ['A premium first impression', 'A branded project enquiry that feels considered from the first click.'],
-  ['A lead command centre', 'A simple internal record for opportunities, decisions, and next actions.'],
-  ['A proposal-ready brief', 'A useful synthesis of discovery details, scope signals, and open questions.'],
-  ['An onboarding hub', 'A clearer way to gather client context, assets, approvals, and access.'],
+const flow = [
+  ['01', 'Capture the right context', 'A project enquiry designed to ask thoughtful questions before your first reply.'],
+  ['02', 'Make the next move clear', 'A simple view of fit, timing, scope signals, and the recommended action.'],
+  ['03', 'Start with momentum', 'A proper client home for the details that make kickoff more useful.'],
 ];
 
 export default function Home() {
   return (
     <>
       <main>
-        <section className="hero-zone">
-          <Nav />
-          <div className="shell hero">
-            <div>
-              <div className="eyebrow"><i className="dot" /> The Client Flow System, by Lukhanyo Radebe</div>
-              <h1>Make every new client feel like a <em>great decision.</em></h1>
-              <p>
-                A polished lead-to-client system for branding and web-design studios that want to respond faster, onboard better, and spend less time on avoidable admin.
-              </p>
-              <div className="actions">
-                <Link className="pill blue" href="/start-a-project">Experience the intake</Link>
-                <a className="pill light" href="#flow">Explore the flow</a>
-              </div>
-            </div>
-            <div className="flow-art" aria-label="A visual representation of an enquiry becoming a project">
-              <i className="flow-orbit orbit-one" />
-              <i className="flow-orbit orbit-two" />
-              <i className="flow-line" />
-              <span className="flow-stamp">01</span>
-              <div className="flow-card one">
-                <span className="micro">New project enquiry</span>
-                <strong>Website and positioning refresh</strong>
-                <p>Kinfolk Studio · October launch</p>
-                <span className="tag">Strong fit</span>
-              </div>
-              <div className="flow-card two">
-                <span className="micro">Prepared brief</span>
-                <strong>Discovery with direction</strong>
-                <p>Goal, scope signals, and open questions.</p>
-              </div>
-              <div className="flow-card three">
-                <span className="micro">Client onboarding</span>
-                <strong>Ready for kickoff</strong>
-                <p>Context, assets, and approvals in one place.</p>
-              </div>
+        <section className="editorial-hero">
+          <div className="editorial-image" />
+          <div className="editorial-shade" />
+          <div className="editorial-nav"><Nav /></div>
+          <div className="shell editorial-content">
+            <div className="editorial-kicker"><span /> The Client Flow System, by Lukhanyo Radebe</div>
+            <h1>Client work<br />should feel <i>considered</i><br />from the start.</h1>
+            <div className="editorial-bottom">
+              <p>A client experience and studio operating system for branding and web-design teams ready to work with more clarity, care, and momentum.</p>
+              <Link href="/start-a-project" className="editorial-cta">Start a project <b>↗</b></Link>
             </div>
           </div>
-        </section>
-
-        <section className="band">
-          <div className="shell bandgrid">
-            <div><strong>2 days</strong><span>target response window</span></div>
-            <div><strong>1 clear flow</strong><span>from enquiry through kickoff</span></div>
-            <div><strong>0 lost context</strong><span>between client and studio</span></div>
+          <div className="hero-note"><span>01</span><small>From first enquiry<br />to a project ready to begin.</small></div>
+          <div className="hero-card">
+            <p>NEW ENQUIRY</p>
+            <strong>Website and positioning<br />refresh</strong>
+            <span>Strong fit · October launch</span>
           </div>
         </section>
 
-        <section className="shell section" id="flow">
-          <div className="section-head">
-            <h2>Good client experience begins before the kickoff call.</h2>
-            <p>Most small studios do excellent creative work while their new-business process still lives across DMs, inboxes, notes, and memory.</p>
-          </div>
-          <div className="steps">
-            {steps.map(([number, title, description]) => (
-              <article className="step" key={number}>
-                <span className="num">{number}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
+        <section className="statement">
+          <div className="shell statement-grid">
+            <p className="statement-label">A BETTER BEGINNING</p>
+            <h2>Most studios do exceptional creative work. Their client journey should show it.</h2>
+            <p className="statement-copy">The Client Flow System replaces scattered DMs, rushed proposals, and awkward onboarding with a thoughtful sequence of moments that work well for clients and the team behind the scenes.</p>
           </div>
         </section>
 
-        <section className="section tint">
+        <section className="black-flow" id="flow">
           <div className="shell">
-            <div className="section-head">
-              <h2>A system that feels as considered as your creative work.</h2>
-              <p>Client-facing moments are polished. Studio-facing moments are practical. Both work around the tools your team already uses.</p>
-            </div>
-            <div className="deliverables">
-              {deliverables.map(([title, description], index) => (
-                <article className="deliverable" key={title}>
-                  <span className="num">0{index + 1}</span>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </article>
-              ))}
+            <div className="black-flow-head"><p>THE FLOW</p><h2>Every first step has a purpose.</h2></div>
+            <div className="flow-list">
+              {flow.map(([number, title, copy]) => <article key={number}>
+                <span>{number}</span><h3>{title}</h3><p>{copy}</p><b>↗</b>
+              </article>)}
             </div>
           </div>
         </section>
 
-        <section className="shell section" id="sprint">
-          <div className="offer">
-            <div>
-              <span className="eyebrow" style={{ color: '#b9c1d1' }}>Founding Client Sprint</span>
-              <h2>A smoother start for your next client.</h2>
-              <p>One focused system for enquiry, qualification, proposal preparation, onboarding, and project setup. Built around how your studio already works.</p>
-              <Link href="/start-a-project" className="pill" style={{ background: '#fff', color: '#080b17' }}>Start a project</Link>
-            </div>
-            <div className="price">
-              <strong>R12,500</strong>
-              <span>Founding client rate for the first three studios</span>
-              <p>7 to 10 business days<br />50% to begin, 50% at handover<br />Two weeks of refinement included</p>
-            </div>
+        <section className="proof">
+          <div className="shell proof-grid">
+            <div><p>THE FOUNDING CLIENT SPRINT</p><h2>Built around the way your studio already works.</h2></div>
+            <div className="proof-panel"><span>7 to 10 business days</span><strong>R12,500</strong><p>For the first three studios. One focused system for enquiry, qualification, proposal preparation, onboarding, and project setup.</p><Link href="/start-a-project" className="pill blue">Start a project</Link></div>
           </div>
         </section>
       </main>
