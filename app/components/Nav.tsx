@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Nav(){return <header className="shell"><nav className="nav"><Link href="/" className="brand">LUKHANYO RADEBE<small>Design, creative engineering, automation</small></Link><div className="navlinks"><Link href="/#flow">The flow</Link><Link href="/#sprint">Founding sprint</Link><Link href="/start-a-project" className="pill">Start a project</Link></div></nav></header>}
