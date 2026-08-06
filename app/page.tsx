@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="moments">
+        <section className="moments" id="flow">
           <div className="shell">
             <div className="moments-top"><p className="small-label">THREE MOMENTS THAT MATTER</p><h2>Designed to move the work forward.</h2></div>
             <div className="moment-list">
