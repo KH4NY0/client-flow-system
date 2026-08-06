@@ -51,10 +51,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="studio-sprint">
+        <section className="studio-sprint" id="sprint">
+          <div className="sprint-mark" aria-hidden="true">01</div>
           <div className="shell sprint-grid">
-            <div><p className="small-label">FOUNDING CLIENT SPRINT</p><h2>One considered system. Built around your studio.</h2></div>
-            <div className="sprint-info"><strong>R12,500</strong><span>7 to 10 business days</span><p>For the first three studios. Enquiry, qualification, proposal preparation, onboarding, and project setup, configured as one working flow.</p><Link href="/start-a-project" className="design-button dark">Start a project <span>↗</span></Link></div>
+            <div className="sprint-copy"><p className="small-label">FOUNDING CLIENT SPRINT</p><h2>One clear system for the studio you are becoming.</h2><p>For studios ready to make every new-client moment feel more organised, more considered, and more theirs.</p></div>
+            <div className="sprint-info">
+              <div className="sprint-topline"><span>FIRST THREE STUDIOS</span><b>7 TO 10 DAYS</b></div>
+              <strong>R12,500</strong>
+              <div className="sprint-divider" />
+              <p>One focused lead-to-client system, covering enquiry, qualification, proposal preparation, onboarding, and project setup.</p>
+              <Link href="/start-a-project" className="design-button dark">Start a project <span>↗</span></Link>
+            </div>
           </div>
         </section>
       </main>
